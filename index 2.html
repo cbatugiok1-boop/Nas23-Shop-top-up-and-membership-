@@ -1,0 +1,1126 @@
+<!DOCTYPE html>
+<html lang="id" class="dark scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nas23 Shop - Top Up Game Murah & Aman Direct Automatic</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        brand: {
+                            cyan: '#00f2fe',
+                            purple: '#4facfe',
+                            gold: '#fbbf24',
+                            darkBg: '#0b0f19',
+                            cardBg: '#111827',
+                            border: '#1f2937'
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <!-- Google Fonts & Font Awesome Icons -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #0b0f19;
+            color: #f3f4f6;
+        }
+        /* Custom Scrollbar */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #0b0f19;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #1f2937;
+            border-radius: 4px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #374151;
+        }
+        .glow-effect {
+            box-shadow: 0 0 25px rgba(0, 242, 254, 0.15);
+        }
+        .glow-effect-gold {
+            box-shadow: 0 0 20px rgba(251, 191, 36, 0.2);
+        }
+        .no-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+        .no-scrollbar {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+        /* Step pulse animation */
+        @keyframes pulse-ring {
+            0% { transform: scale(0.95); opacity: 0.8; }
+            50% { transform: scale(1.1); opacity: 1; }
+            100% { transform: scale(0.95); opacity: 0.8; }
+        }
+        .pulse-active {
+            animation: pulse-ring 1.8s infinite ease-in-out;
+        }
+    </style>
+</head>
+<body class="bg-brand-darkBg text-gray-100 min-h-screen flex flex-col justify-between selection:bg-cyan-500 selection:text-black">
+
+    <!-- ================= NAVBAR ================= -->
+    <header class="sticky top-0 z-40 bg-brand-darkBg/90 backdrop-blur-md border-b border-gray-800/80 transition-all">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-20">
+                
+                <!-- Logo -->
+                <a href="#" class="flex items-center space-x-3 group">
+                    <div class="w-11 h-11 rounded-xl bg-gradient-to-tr from-cyan-500 via-indigo-500 to-amber-400 p-[2px] transition transform group-hover:scale-105">
+                        <div class="w-full h-full bg-brand-darkBg rounded-[10px] flex items-center justify-center">
+                            <i class="fa-solid font-bold text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-amber-400 text-xl">N23</i>
+                        </div>
+                    </div>
+                    <div>
+                        <span class="text-2xl font-extrabold tracking-wider bg-clip-text text-transparent bg-gradient-to-r from-cyan-400 via-blue-400 to-amber-300">
+                            NAS23 SHOP
+                        </span>
+                        <span class="block text-[10px] font-medium tracking-widest text-gray-400 -mt-1 uppercase">Top Up Game Murah & Aman</span>
+                    </div>
+                </a>
+
+                <!-- Desktop Navigation (Tanpa Cek Transaksi Manual) -->
+                <nav class="hidden md:flex items-center space-x-6 text-sm font-semibold">
+                    <a href="#beranda" class="text-cyan-400 transition hover:text-cyan-300">Beranda</a>
+                    <a href="#games" class="text-gray-300 transition hover:text-cyan-400">Daftar Game</a>
+                    <a href="#membership" class="text-amber-400 transition hover:text-amber-300 flex items-center gap-1">
+                        <i class="fa-solid fa-crown text-xs"></i> Membership VIP (60rb)
+                    </a>
+                    <a href="#syarat" class="text-gray-300 transition hover:text-cyan-400">Syarat & Ketentuan</a>
+                    <div class="px-3.5 py-1.5 rounded-xl bg-emerald-500/10 border border-emerald-500/30 text-emerald-400 text-xs flex items-center gap-2">
+                        <span class="w-2 h-2 rounded-full bg-emerald-400 animate-ping"></span> Otomatis 24 Jam
+                    </div>
+                </nav>
+
+                <!-- Mobile Menu Button -->
+                <div class="md:hidden flex items-center">
+                    <button id="mobile-menu-btn" class="text-gray-300 hover:text-white focus:outline-none p-2">
+                        <i class="fa-solid fa-bars text-2xl"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Mobile Menu Dropdown -->
+        <div id="mobile-menu" class="hidden md:hidden bg-brand-cardBg border-b border-gray-800 px-4 pt-2 pb-6 space-y-3">
+            <a href="#beranda" class="block py-2 text-cyan-400 font-medium">Beranda</a>
+            <a href="#games" class="block py-2 text-gray-300 hover:text-cyan-400 font-medium">Daftar Game</a>
+            <a href="#membership" class="block py-2 text-amber-400 font-medium flex items-center gap-2">
+                <i class="fa-solid fa-crown text-xs"></i> Membership VIP (Rp 60rb)
+            </a>
+            <a href="#syarat" class="block py-2 text-gray-300 hover:text-cyan-400 font-medium">Syarat & Ketentuan</a>
+        </div>
+    </header>
+
+    <main id="beranda" class="flex-grow">
+        
+        <!-- ================= HERO BANNER ================= -->
+        <section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+            <div class="relative overflow-hidden rounded-3xl bg-gradient-to-r from-cyan-900/40 via-indigo-900/30 to-purple-900/40 border border-cyan-500/20 p-6 md:p-12 mb-10 glow-effect">
+                <div class="relative z-10 grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
+                    <div>
+                        <span class="inline-flex items-center px-3 py-1 rounded-full text-xs font-semibold bg-amber-400/20 text-amber-300 border border-amber-400/30 mb-4">
+                            <i class="fa-solid fa-bolt mr-1.5 text-amber-400"></i> Auto Live Track Payment System
+                        </span>
+                        <h1 class="text-3xl sm:text-4xl md:text-5xl font-black text-white leading-tight tracking-tight">
+                            Top Up Hanya ID & <span class="bg-clip-text text-transparent bg-gradient-to-r from-cyan-400 via-teal-300 to-amber-300">Membership Rp 60.000</span>
+                        </h1>
+                        <p class="mt-4 text-gray-300 text-sm md:text-base leading-relaxed">
+                            Proses super cepat & aman tanpa password. Setelah checkout, status transaksi diproses secara <strong class="text-cyan-400">OTOMATIS & REAL-TIME</strong> langsung di layar Anda.
+                        </p>
+                        <div class="mt-6 flex flex-wrap gap-4">
+                            <a href="#games" class="px-6 py-3 rounded-xl bg-gradient-to-r from-cyan-500 to-blue-600 text-black font-bold shadow-lg hover:brightness-110 transition duration-300">
+                                Top Up Game Sekarang <i class="fa-solid fa-arrow-right ml-2"></i>
+                            </a>
+                            <a href="#membership" class="px-6 py-3 rounded-xl bg-amber-500/20 border border-amber-500/40 text-amber-300 font-bold hover:bg-amber-500/30 transition duration-300">
+                                <i class="fa-solid fa-crown mr-2"></i> Beli Membership (Rp 60.000)
+                            </a>
+                        </div>
+                    </div>
+                    <div class="hidden md:flex justify-center relative">
+                        <div class="w-72 h-72 rounded-full bg-cyan-500/10 filter blur-3xl absolute -z-10"></div>
+                        <img src="https://images.unsplash.com/photo-1542751371-adc38448a05e?w=600&auto=format&fit=crop&q=80" alt="Gaming Banner" class="rounded-2xl shadow-2xl border border-gray-700/60 object-cover max-h-72 transform rotate-2 hover:rotate-0 transition duration-500">
+                    </div>
+                </div>
+            </div>
+
+            <!-- ================= TRUST BADGES ================= -->
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-4 mb-14">
+                <div class="bg-brand-cardBg/80 p-4 rounded-2xl border border-gray-800 flex items-center gap-4">
+                    <div class="w-12 h-12 rounded-xl bg-cyan-500/10 text-cyan-400 flex items-center justify-center text-xl shrink-0">
+                        <i class="fa-solid fa-bolt-lightning"></i>
+                    </div>
+                    <div>
+                        <h4 class="font-bold text-sm text-gray-100">Proses Instant</h4>
+                        <p class="text-xs text-gray-400">1 - 3 Detik Masuk ID</p>
+                    </div>
+                </div>
+                <div class="bg-brand-cardBg/80 p-4 rounded-2xl border border-gray-800 flex items-center gap-4">
+                    <div class="w-12 h-12 rounded-xl bg-emerald-500/10 text-emerald-400 flex items-center justify-center text-xl shrink-0">
+                        <i class="fa-solid fa-shield-halved"></i>
+                    </div>
+                    <div>
+                        <h4 class="font-bold text-sm text-gray-100">100% Aman & Legal</h4>
+                        <p class="text-xs text-gray-400">Hanya Membutuhkan ID</p>
+                    </div>
+                </div>
+                <div class="bg-brand-cardBg/80 p-4 rounded-2xl border border-gray-800 flex items-center gap-4">
+                    <div class="w-12 h-12 rounded-xl bg-amber-500/10 text-amber-400 flex items-center justify-center text-xl shrink-0">
+                        <i class="fa-solid fa-tags"></i>
+                    </div>
+                    <div>
+                        <h4 class="font-bold text-sm text-gray-100">Serba Rp 60rb</h4>
+                        <p class="text-xs text-gray-400">Membership All Pass</p>
+                    </div>
+                </div>
+                <div class="bg-brand-cardBg/80 p-4 rounded-2xl border border-gray-800 flex items-center gap-4">
+                    <div class="w-12 h-12 rounded-xl bg-purple-500/10 text-purple-400 flex items-center justify-center text-xl shrink-0">
+                        <i class="fa-solid fa-arrows-rotate"></i>
+                    </div>
+                    <div>
+                        <h4 class="font-bold text-sm text-gray-100">Status Otomatis</h4>
+                        <p class="text-xs text-gray-400">Live Tracker Direct</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- ================= HIGHLIGHT MEMBERSHIP SECTION ================= -->
+            <section id="membership" class="mb-16 scroll-mt-24">
+                <div class="flex flex-col sm:flex-row sm:items-center justify-between mb-6 gap-2">
+                    <div>
+                        <h2 class="text-2xl font-black text-white flex items-center gap-2">
+                            <i class="fa-solid fa-crown text-amber-400"></i> Paket Membership Game & VIP
+                        </h2>
+                        <p class="text-xs text-gray-400 mt-1">Dapatkan item harian selama sebulan penuh dengan harga hemat Rp 60.000!</p>
+                    </div>
+                    <span class="inline-flex items-center w-max px-3 py-1 bg-amber-500/10 border border-amber-500/30 rounded-lg text-amber-400 text-xs font-bold">
+                        Promo Bulanan: Rp 60.000 🔥
+                    </span>
+                </div>
+
+                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+                    
+                    <!-- Genshin Welkin Card -->
+                    <div class="bg-gradient-to-b from-brand-cardBg to-gray-900 border border-amber-500/30 rounded-2xl p-5 relative group hover:border-amber-400 transition-all duration-300 glow-effect-gold flex flex-col justify-between">
+                        <div>
+                            <span class="absolute top-3 right-3 bg-amber-500 text-black font-extrabold text-[10px] px-2.5 py-1 rounded-full uppercase tracking-wider">Rp 60.000</span>
+                            <div class="flex items-center space-x-4">
+                                <img src="https://images.unsplash.com/photo-1563089145-599997674d42?w=150&auto=format&fit=crop&q=80" class="w-16 h-16 rounded-xl object-cover border border-amber-400/40" alt="Genshin">
+                                <div>
+                                    <h3 class="font-bold text-lg text-white group-hover:text-amber-400 transition">Blessing Welkin Moon</h3>
+                                    <p class="text-xs text-gray-400">Genshin Impact (Hanya UID)</p>
+                                    <p class="text-sm font-extrabold text-cyan-400 mt-1">Rp 60.000 <span class="text-[10px] text-gray-400 font-normal line-through">Rp 79.000</span></p>
+                                </div>
+                            </div>
+                            <p class="text-xs text-gray-300 mt-4 bg-gray-800/50 p-2.5 rounded-lg border border-gray-700/50">
+                                ✨ Instant 300 Genesis Crystals + 90 Primogems Harian (Total 3000 Primogems selama 30 Hari).
+                            </p>
+                        </div>
+                        <button onclick="selectGameDirect('genshin', 'Blessing of the Welkin Moon', 60000)" class="w-full mt-4 py-2.5 rounded-xl bg-amber-500 hover:bg-amber-400 text-black font-extrabold text-sm transition">
+                            Beli Welkin Rp 60rb
+                        </button>
+                    </div>
+
+                    <!-- Free Fire Membership Bulanan Card -->
+                    <div class="bg-gradient-to-b from-brand-cardBg to-gray-900 border border-amber-500/30 rounded-2xl p-5 relative group hover:border-amber-400 transition-all duration-300 glow-effect-gold flex flex-col justify-between">
+                        <div>
+                            <span class="absolute top-3 right-3 bg-amber-500 text-black font-extrabold text-[10px] px-2.5 py-1 rounded-full uppercase tracking-wider">Rp 60.000</span>
+                            <div class="flex items-center space-x-4">
+                                <img src="https://images.unsplash.com/photo-1511512578047-dfb367046420?w=150&auto=format&fit=crop&q=80" class="w-16 h-16 rounded-xl object-cover border border-amber-400/40" alt="FF">
+                                <div>
+                                    <h3 class="font-bold text-lg text-white group-hover:text-amber-400 transition">Membership Bulanan FF</h3>
+                                    <p class="text-xs text-gray-400">Free Fire (Hanya User ID)</p>
+                                    <p class="text-sm font-extrabold text-cyan-400 mt-1">Rp 60.000 <span class="text-[10px] text-gray-400 font-normal line-through">Rp 115.000</span></p>
+                                </div>
+                            </div>
+                            <p class="text-xs text-gray-300 mt-4 bg-gray-800/50 p-2.5 rounded-lg border border-gray-700/50">
+                                ✨ Total 2.600 Diamond + Special Icon VIP selama 30 hari penuh.
+                            </p>
+                        </div>
+                        <button onclick="selectGameDirect('ff', 'Membership Bulanan FF', 60000)" class="w-full mt-4 py-2.5 rounded-xl bg-amber-500 hover:bg-amber-400 text-black font-extrabold text-sm transition">
+                            Beli Membership Rp 60rb
+                        </button>
+                    </div>
+
+                    <!-- Honor of Kings Monthly Pass -->
+                    <div class="bg-gradient-to-b from-brand-cardBg to-gray-900 border border-amber-500/30 rounded-2xl p-5 relative group hover:border-amber-400 transition-all duration-300 glow-effect-gold flex flex-col justify-between">
+                        <div>
+                            <span class="absolute top-3 right-3 bg-amber-500 text-black font-extrabold text-[10px] px-2.5 py-1 rounded-full uppercase tracking-wider">Rp 60.000</span>
+                            <div class="flex items-center space-x-4">
+                                <img src="https://images.unsplash.com/photo-1550745165-9bc0b252726f?w=150&auto=format&fit=crop&q=80" class="w-16 h-16 rounded-xl object-cover border border-amber-400/40" alt="HOK">
+                                <div>
+                                    <h3 class="font-bold text-lg text-white group-hover:text-amber-400 transition">Monthly Card Pass HOK</h3>
+                                    <p class="text-xs text-gray-400">Honor of Kings (User ID)</p>
+                                    <p class="text-sm font-extrabold text-cyan-400 mt-1">Rp 60.000 <span class="text-[10px] text-gray-400 font-normal line-through">Rp 85.000</span></p>
+                                </div>
+                            </div>
+                            <p class="text-xs text-gray-300 mt-4 bg-gray-800/50 p-2.5 rounded-lg border border-gray-700/50">
+                                ✨ Instant 280 Tokens + 80 Tokens Harian & Privilege VIP.
+                            </p>
+                        </div>
+                        <button onclick="selectGameDirect('hok', 'Monthly Card Pass HOK', 60000)" class="w-full mt-4 py-2.5 rounded-xl bg-amber-500 hover:bg-amber-400 text-black font-extrabold text-sm transition">
+                            Beli Pass Rp 60rb
+                        </button>
+                    </div>
+
+                </div>
+            </section>
+
+            <!-- ================= DAFTAR GAME DENGAN SEARCH & FILTER CATEGORY ================= -->
+            <section id="games" class="mb-12 scroll-mt-24">
+                <div class="flex flex-col md:flex-row md:items-center justify-between mb-6 gap-4">
+                    <div>
+                        <h2 class="text-2xl font-black text-white flex items-center gap-2">
+                            <i class="fa-solid fa-gamepad text-cyan-400"></i> Pilih Game Favorit
+                        </h2>
+                        <p class="text-xs text-gray-400 mt-1">Cari game dan klik untuk memilih nominal / membership</p>
+                    </div>
+
+                    <!-- Search Bar Input -->
+                    <div class="relative min-w-[260px]">
+                        <i class="fa-solid fa-magnifying-glass absolute left-3.5 top-3.5 text-gray-400 text-sm"></i>
+                        <input type="text" id="search-game-input" onkeyup="filterGames()" placeholder="Cari nama game..." class="w-full bg-brand-cardBg border border-gray-700 rounded-xl pl-10 pr-4 py-2.5 text-xs text-white focus:outline-none focus:border-cyan-400">
+                    </div>
+                </div>
+
+                <!-- Category Filters -->
+                <div class="flex items-center gap-2 overflow-x-auto pb-3 mb-6 text-xs no-scrollbar" id="category-filter-container">
+                    <button onclick="setCategoryFilter('all', this)" class="category-btn active border px-4 py-2 rounded-xl font-bold transition whitespace-nowrap bg-cyan-500 border-cyan-400 text-black">
+                        Semua Game
+                    </button>
+                    <button onclick="setCategoryFilter('Mobile Legends', this)" class="category-btn border px-4 py-2 rounded-xl font-bold transition whitespace-nowrap bg-gray-900 border-gray-700 text-gray-300 hover:border-cyan-400">
+                        Mobile Legends
+                    </button>
+                    <button onclick="setCategoryFilter('Free Fire', this)" class="category-btn border px-4 py-2 rounded-xl font-bold transition whitespace-nowrap bg-gray-900 border-gray-700 text-gray-300 hover:border-cyan-400">
+                        Free Fire
+                    </button>
+                    <button onclick="setCategoryFilter('Genshin Impact', this)" class="category-btn border px-4 py-2 rounded-xl font-bold transition whitespace-nowrap bg-gray-900 border-gray-700 text-gray-300 hover:border-cyan-400">
+                        Genshin Impact
+                    </button>
+                    <button onclick="setCategoryFilter('PUBG Mobile', this)" class="category-btn border px-4 py-2 rounded-xl font-bold transition whitespace-nowrap bg-gray-900 border-gray-700 text-gray-300 hover:border-cyan-400">
+                        PUBG Mobile
+                    </button>
+                    <button onclick="setCategoryFilter('Honor of Kings', this)" class="category-btn border px-4 py-2 rounded-xl font-bold transition whitespace-nowrap bg-gray-900 border-gray-700 text-gray-300 hover:border-cyan-400">
+                        Honor of Kings
+                    </button>
+                </div>
+
+                <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-4" id="game-grid">
+                    <!-- Game items generated dynamically by JS -->
+                </div>
+            </section>
+
+            <!-- ================= FORM INTEGRATED TOP UP ================= -->
+            <section id="topup-form-section" class="scroll-mt-24 mb-16">
+                <div class="bg-brand-cardBg border border-gray-800 rounded-3xl p-6 sm:p-8 shadow-2xl relative">
+                    
+                    <!-- Overlay alert when no game selected -->
+                    <div id="form-overlay-alert" class="absolute inset-0 bg-brand-darkBg/95 backdrop-blur-sm z-20 rounded-3xl flex items-center justify-center p-6 text-center">
+                        <div>
+                            <div class="w-16 h-16 mx-auto mb-4 rounded-full bg-cyan-500/10 text-cyan-400 flex items-center justify-center text-2xl border border-cyan-500/30">
+                                <i class="fa-solid fa-hand-pointer"></i>
+                            </div>
+                            <h3 class="text-xl font-bold text-white">Pilih Game Terlebih Dahulu</h3>
+                            <p class="text-gray-400 text-xs sm:text-sm mt-2 max-w-md">Silakan klik salah satu game di atas untuk memilih item dan metode pembayaran.</p>
+                        </div>
+                    </div>
+
+                    <div class="border-b border-gray-800 pb-4 mb-6 flex items-center justify-between">
+                        <div class="flex items-center space-x-4">
+                            <img id="selected-game-img" src="" class="w-12 h-12 rounded-xl object-cover border border-cyan-500/40 hidden" alt="Selected Game">
+                            <div>
+                                <span class="text-xs text-cyan-400 font-bold uppercase tracking-wider">Form Order Direct Payment</span>
+                                <h3 id="selected-game-title" class="text-xl font-extrabold text-white">Pilih Game</h3>
+                            </div>
+                        </div>
+                        <span id="game-badge" class="px-3 py-1 bg-cyan-500/10 border border-cyan-500/30 text-cyan-400 text-xs font-bold rounded-full">Proses Otomatis</span>
+                    </div>
+
+                    <form id="topup-form" onsubmit="handleFormSubmit(event)">
+                        
+                        <!-- Step 1: User ID -->
+                        <div class="mb-8">
+                            <label class="flex items-center justify-between text-sm font-bold text-gray-200 mb-2">
+                                <span>1. Masukkan User ID / Zone ID Game</span>
+                                <button type="button" onclick="openModalGuide()" class="text-xs text-cyan-400 hover:underline flex items-center gap-1">
+                                    <i class="fa-regular fa-circle-question"></i> Petunjuk Lokasi ID
+                                </button>
+                            </label>
+                            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                                <div>
+                                    <input type="text" id="user-id" required placeholder="User ID Game (Contoh: 12345678)" class="w-full bg-gray-900/80 border border-gray-700 rounded-xl px-4 py-3 text-sm text-white focus:outline-none focus:border-cyan-400 focus:ring-1 focus:ring-cyan-400 transition">
+                                </div>
+                                <div id="zone-id-container">
+                                    <input type="text" id="zone-id" placeholder="Zone ID / Server (Contoh: 1234)" class="w-full bg-gray-900/80 border border-gray-700 rounded-xl px-4 py-3 text-sm text-white focus:outline-none focus:border-cyan-400 focus:ring-1 focus:ring-cyan-400 transition">
+                                </div>
+                            </div>
+                            <p class="text-[11px] text-gray-400 mt-2"><i class="fa-solid fa-lock text-emerald-400 mr-1"></i> Tanpa password / login akun. Aman 100%.</p>
+                        </div>
+
+                        <!-- Step 2: Nominal / Membership -->
+                        <div class="mb-8">
+                            <label class="block text-sm font-bold text-gray-200 mb-3">2. Pilih Nominal / Membership</label>
+                            <div id="nominal-grid" class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-3">
+                                <!-- Nominal options populated by JS -->
+                            </div>
+                        </div>
+
+                        <!-- Step 3: Payment Method -->
+                        <div class="mb-8">
+                            <label class="block text-sm font-bold text-gray-200 mb-3">3. Pilih Metode Pembayaran (Otomatis)</label>
+                            
+                            <!-- QRIS & E-Wallet -->
+                            <p class="text-xs text-gray-400 font-semibold mb-2">QRIS & E-Wallet</p>
+                            <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-3 mb-4">
+                                <div onclick="selectPayment('QRIS', 'QRIS Scan All Pay', 0)" class="payment-card border border-gray-700 bg-gray-900/50 p-3 rounded-xl cursor-pointer hover:border-cyan-400 transition flex flex-col items-center justify-center text-center">
+                                    <i class="fa-solid fa-qrcode text-cyan-400 text-xl mb-1"></i>
+                                    <span class="text-xs font-bold text-gray-200">QRIS Scan</span>
+                                    <span class="text-[10px] text-emerald-400 font-semibold">Bebas Admin</span>
+                                </div>
+                                <div onclick="selectPayment('DANA', '0812-3456-7890 (a.n Nas23 Shop)', 0)" class="payment-card border border-gray-700 bg-gray-900/50 p-3 rounded-xl cursor-pointer hover:border-cyan-400 transition flex flex-col items-center justify-center text-center">
+                                    <i class="fa-solid fa-wallet text-blue-400 text-xl mb-1"></i>
+                                    <span class="text-xs font-bold text-gray-200">DANA</span>
+                                    <span class="text-[10px] text-gray-400">Instant</span>
+                                </div>
+                                <div onclick="selectPayment('OVO', '0812-3456-7890 (a.n Nas23 Shop)', 0)" class="payment-card border border-gray-700 bg-gray-900/50 p-3 rounded-xl cursor-pointer hover:border-cyan-400 transition flex flex-col items-center justify-center text-center">
+                                    <i class="fa-solid fa-coins text-purple-400 text-xl mb-1"></i>
+                                    <span class="text-xs font-bold text-gray-200">OVO</span>
+                                    <span class="text-[10px] text-gray-400">Instant</span>
+                                </div>
+                                <div onclick="selectPayment('GoPay', '0812-3456-7890 (a.n Nas23 Shop)', 0)" class="payment-card border border-gray-700 bg-gray-900/50 p-3 rounded-xl cursor-pointer hover:border-cyan-400 transition flex flex-col items-center justify-center text-center">
+                                    <i class="fa-solid fa-mobile-screen-button text-cyan-400 text-xl mb-1"></i>
+                                    <span class="text-xs font-bold text-gray-200">GoPay</span>
+                                    <span class="text-[10px] text-gray-400">Instant</span>
+                                </div>
+                                <div onclick="selectPayment('ShopeePay', '0812-3456-7890 (a.n Nas23 Shop)', 0)" class="payment-card border border-gray-700 bg-gray-900/50 p-3 rounded-xl cursor-pointer hover:border-cyan-400 transition flex flex-col items-center justify-center text-center">
+                                    <i class="fa-solid fa-bag-shopping text-orange-400 text-xl mb-1"></i>
+                                    <span class="text-xs font-bold text-gray-200">ShopeePay</span>
+                                    <span class="text-[10px] text-gray-400">Instant</span>
+                                </div>
+                            </div>
+
+                            <!-- Transfer Bank -->
+                            <p class="text-xs text-gray-400 font-semibold mb-2">Transfer Bank (Verifikasi Otomatis System)</p>
+                            <div class="grid grid-cols-2 sm:grid-cols-3 gap-3 mb-4">
+                                <div onclick="selectPayment('BCA Virtual Account', '88012345678912', 1000)" class="payment-card border border-gray-700 bg-gray-900/50 p-3 rounded-xl cursor-pointer hover:border-cyan-400 transition text-center">
+                                    <span class="block text-xs font-bold text-gray-200">Bank BCA</span>
+                                    <span class="text-[10px] text-gray-400">+Rp 1.000 Biaya</span>
+                                </div>
+                                <div onclick="selectPayment('Mandiri VA', '89012345678912', 1000)" class="payment-card border border-gray-700 bg-gray-900/50 p-3 rounded-xl cursor-pointer hover:border-cyan-400 transition text-center">
+                                    <span class="block text-xs font-bold text-gray-200">Bank Mandiri</span>
+                                    <span class="text-[10px] text-gray-400">+Rp 1.000 Biaya</span>
+                                </div>
+                                <div onclick="selectPayment('BRI VA', '87012345678912', 1000)" class="payment-card border border-gray-700 bg-gray-900/50 p-3 rounded-xl cursor-pointer hover:border-cyan-400 transition text-center">
+                                    <span class="block text-xs font-bold text-gray-200">Bank BRI</span>
+                                    <span class="text-[10px] text-gray-400">+Rp 1.000 Biaya</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Price Summary Bar -->
+                        <div class="bg-gray-900 p-4 rounded-2xl border border-gray-800 mb-6 flex flex-wrap items-center justify-between gap-4">
+                            <div>
+                                <span class="text-xs text-gray-400 block">Total Kalkulasi Pembayaran:</span>
+                                <span id="total-price-display" class="text-2xl font-black text-cyan-400">Rp 0</span>
+                            </div>
+                            <button type="submit" class="px-8 py-3.5 bg-gradient-to-r from-cyan-400 via-teal-400 to-amber-400 text-black font-extrabold rounded-xl shadow-lg hover:brightness-110 transition duration-300 w-full sm:w-auto">
+                                Bayar Sekarang <i class="fa-solid fa-bolt ml-2"></i>
+                            </button>
+                        </div>
+
+                    </form>
+                </div>
+            </section>
+
+            <!-- ================= SYARAT & KETENTUAN ================= -->
+            <section id="syarat" class="mb-16 scroll-mt-24">
+                <div class="bg-brand-cardBg border border-gray-800 rounded-3xl p-6 sm:p-8">
+                    <h3 class="text-xl font-black text-white mb-4 flex items-center gap-2">
+                        <i class="fa-solid fa-file-contract text-cyan-400"></i> Syarat & Ketentuan Layanan Nas23 Shop
+                    </h3>
+                    <ul class="space-y-3 text-xs sm:text-sm text-gray-300 list-disc list-inside leading-relaxed">
+                        <li>Nas23 Shop **hanya memerlukan User ID & Zone ID / Server**. Tanpa password / login akun.</li>
+                        <li>Pastikan User ID telah diisi dengan teliti. Kesalahan nomor ID menjadi tanggung jawab pembeli.</li>
+                        <li>Sistem pelacakan status transaksi diproses secara **LIVE OTOMATIS** di layar ponsel / laptop Anda setelah checkout.</li>
+                        <li>Seluruh harga paket Membership Bulanan / Welkin Moon / Monthly Card Pass berlaku serba **Rp 60.000**.</li>
+                    </ul>
+                </div>
+            </section>
+
+        </div>
+    </main>
+
+    <!-- ================= FOOTER ================= -->
+    <footer class="bg-gray-950 border-t border-gray-800/80 pt-12 pb-8">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-10">
+                <div class="md:col-span-2">
+                    <a href="#" class="flex items-center space-x-3 mb-4">
+                        <div class="w-10 h-10 rounded-xl bg-gradient-to-tr from-cyan-500 to-amber-400 p-[2px]">
+                            <div class="w-full h-full bg-brand-darkBg rounded-[10px] flex items-center justify-center">
+                                <i class="fa-solid font-bold text-cyan-400 text-lg">N23</i>
+                            </div>
+                        </div>
+                        <span class="text-xl font-extrabold tracking-wider text-white">NAS23 SHOP</span>
+                    </a>
+                    <p class="text-xs text-gray-400 max-w-sm leading-relaxed">
+                        Platform Top Up Game Online dan Membership Murah, Instan & Automatic Live Status System Terpercaya No. 1 di Indonesia.
+                    </p>
+                </div>
+                <div>
+                    <h4 class="font-bold text-sm text-white mb-3">Navigasi Cepat</h4>
+                    <ul class="space-y-2 text-xs text-gray-400">
+                        <li><a href="#beranda" class="hover:text-cyan-400 transition">Beranda</a></li>
+                        <li><a href="#games" class="hover:text-cyan-400 transition">Daftar Game</a></li>
+                        <li><a href="#membership" class="hover:text-cyan-400 transition">Paket Membership Rp 60rb</a></li>
+                        <li><a href="#syarat" class="hover:text-cyan-400 transition">Syarat & Ketentuan</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="border-t border-gray-900 pt-6 flex flex-col sm:flex-row justify-between items-center text-xs text-gray-500 gap-4">
+                <p>&copy; 2026 Nas23 Shop. All Rights Reserved.</p>
+                <div class="flex space-x-4">
+                    <a href="#" class="hover:text-gray-300"><i class="fa-brands fa-instagram text-lg"></i></a>
+                    <a href="#" class="hover:text-gray-300"><i class="fa-brands fa-tiktok text-lg"></i></a>
+                    <a href="#" class="hover:text-gray-300"><i class="fa-brands fa-facebook text-lg"></i></a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- ================= MODAL AUTOMATIC CHECKOUT & LIVE STATUS TRACKER ================= -->
+    <div id="checkout-modal" class="fixed inset-0 z-50 bg-black/90 backdrop-blur-md hidden items-center justify-center p-4">
+        <div class="bg-brand-cardBg border border-gray-800 rounded-3xl max-w-lg w-full p-6 relative shadow-2xl max-h-[90vh] overflow-y-auto">
+            <button onclick="closeModal()" class="absolute top-4 right-4 text-gray-400 hover:text-white text-xl">
+                <i class="fa-solid fa-xmark"></i>
+            </button>
+            
+            <div class="flex items-center justify-between border-b border-gray-800 pb-3 mb-4">
+                <h3 class="text-base font-black text-white flex items-center gap-2">
+                    <i class="fa-solid fa-bolt text-cyan-400"></i> Checkout & Status Otomatis
+                </h3>
+                <span id="payment-timer" class="text-xs font-mono bg-red-500/20 text-red-400 border border-red-500/30 px-2.5 py-1 rounded-lg">
+                    15:00
+                </span>
+            </div>
+
+            <!-- Detail Pesanan -->
+            <div class="bg-gray-900/90 p-4 rounded-2xl border border-gray-800 mb-5 text-xs space-y-2">
+                <div class="flex justify-between">
+                    <span class="text-gray-400">No. Invoice:</span>
+                    <span id="modal-inv-code" class="font-mono font-bold text-cyan-400"></span>
+                </div>
+                <div class="flex justify-between">
+                    <span class="text-gray-400">Game & Item:</span>
+                    <span id="modal-game-item" class="font-bold text-white"></span>
+                </div>
+                <div class="flex justify-between">
+                    <span class="text-gray-400">User ID:</span>
+                    <span id="modal-id-val" class="font-bold text-amber-400"></span>
+                </div>
+                <div class="flex justify-between">
+                    <span class="text-gray-400">Metode Bayar:</span>
+                    <span id="modal-pay-method" class="font-bold text-white"></span>
+                </div>
+                <div class="flex justify-between text-sm pt-2 border-t border-gray-800 font-extrabold">
+                    <span class="text-gray-200">Total Transfer:</span>
+                    <span id="modal-grand-total" class="text-cyan-400"></span>
+                </div>
+            </div>
+
+            <!-- QRIS / Code Display Area -->
+            <div id="payment-credentials-box" class="bg-gray-900 border border-gray-800 rounded-2xl p-4 text-center mb-6">
+                <div id="qris-display-area" class="hidden">
+                    <p class="text-xs text-gray-300 font-bold mb-3">Scan QRIS untuk Menyelesaikan Pembayaran:</p>
+                    <div class="w-44 h-44 mx-auto bg-white p-2 rounded-xl border-2 border-cyan-400 flex items-center justify-center mb-2">
+                        <!-- QR Code Placeholder SVG -->
+                        <svg class="w-full h-full" viewBox="0 0 100 100">
+                            <rect width="100" height="100" fill="white"/>
+                            <rect x="10" y="10" width="30" height="30" fill="black"/>
+                            <rect x="15" y="15" width="20" height="20" fill="white"/>
+                            <rect x="20" y="20" width="10" height="10" fill="black"/>
+                            <rect x="60" y="10" width="30" height="30" fill="black"/>
+                            <rect x="65" y="15" width="20" height="20" fill="white"/>
+                            <rect x="70" y="20" width="10" height="10" fill="black"/>
+                            <rect x="10" y="60" width="30" height="30" fill="black"/>
+                            <rect x="15" y="65" width="20" height="20" fill="white"/>
+                            <rect x="20" y="70" width="10" height="10" fill="black"/>
+                            <rect x="45" y="10" width="10" height="20" fill="black"/>
+                            <rect x="45" y="45" width="20" height="10" fill="black"/>
+                            <rect x="70" y="60" width="20" height="20" fill="black"/>
+                            <rect x="50" y="70" width="10" height="20" fill="black"/>
+                        </svg>
+                    </div>
+                    <span class="text-[10px] text-gray-400 block">QRIS Support All E-Wallet & Mobile Banking</span>
+                </div>
+
+                <div id="code-display-area" class="hidden">
+                    <p class="text-xs text-gray-400 mb-2">Nomor Rekening / Kode Pembayaran:</p>
+                    <div class="flex items-center justify-center gap-2 mb-2">
+                        <span id="pay-code-number" class="text-base font-mono font-black text-amber-400 bg-black/60 px-3 py-1.5 rounded-xl border border-amber-500/30"></span>
+                        <button onclick="copyPayCode()" class="p-2 bg-cyan-500/20 hover:bg-cyan-500/30 text-cyan-400 rounded-xl text-xs font-bold border border-cyan-500/40">
+                            <i class="fa-regular fa-copy"></i> Salin
+                        </button>
+                    </div>
+                    <p id="pay-code-holder" class="text-xs text-gray-400"></p>
+                </div>
+            </div>
+
+            <!-- LIVE STATUS STEP INDICATOR (3 STEPS) -->
+            <div class="bg-gray-900/60 border border-gray-800 rounded-2xl p-4 mb-6">
+                <h4 class="text-xs font-bold text-gray-300 uppercase tracking-wider mb-4 flex items-center justify-between">
+                    <span>Live Tracker Status Pesanan</span>
+                    <span class="text-[10px] text-emerald-400 font-normal flex items-center gap-1">
+                        <span class="w-2 h-2 rounded-full bg-emerald-400 animate-ping"></span> Real-time System
+                    </span>
+                </h4>
+
+                <div class="space-y-4 text-xs">
+                    
+                    <!-- Step 1 -->
+                    <div id="track-step-1" class="flex items-start gap-3">
+                        <div id="icon-step-1" class="w-7 h-7 rounded-full bg-amber-500/20 text-amber-400 border border-amber-500/40 flex items-center justify-center shrink-0 font-bold pulse-active">
+                            1
+                        </div>
+                        <div class="flex-grow">
+                            <div class="flex items-center justify-between">
+                                <span id="title-step-1" class="font-bold text-amber-400">Menunggu Pembayaran...</span>
+                                <span id="time-step-1" class="text-[10px] text-gray-500">Sekarang</span>
+                            </div>
+                            <p class="text-[11px] text-gray-400">Selesaikan transfer/scan sesuai nominal sebelum timer habis.</p>
+                        </div>
+                    </div>
+
+                    <!-- Line Divider -->
+                    <div class="w-0.5 h-3 bg-gray-800 ml-3.5 -my-2"></div>
+
+                    <!-- Step 2 -->
+                    <div id="track-step-2" class="flex items-start gap-3 opacity-40">
+                        <div id="icon-step-2" class="w-7 h-7 rounded-full bg-gray-800 text-gray-500 border border-gray-700 flex items-center justify-center shrink-0 font-bold">
+                            2
+                        </div>
+                        <div class="flex-grow">
+                            <div class="flex items-center justify-between">
+                                <span id="title-step-2" class="font-bold text-gray-400">Memproses Ke Akun Game ID</span>
+                                <span id="time-step-2" class="text-[10px] text-gray-500">-</span>
+                            </div>
+                            <p class="text-[11px] text-gray-400">Pembayaran dikonfirmasi, mengirim item/membership ke User ID.</p>
+                        </div>
+                    </div>
+
+                    <!-- Line Divider -->
+                    <div class="w-0.5 h-3 bg-gray-800 ml-3.5 -my-2"></div>
+
+                    <!-- Step 3 -->
+                    <div id="track-step-3" class="flex items-start gap-3 opacity-40">
+                        <div id="icon-step-3" class="w-7 h-7 rounded-full bg-gray-800 text-gray-500 border border-gray-700 flex items-center justify-center shrink-0 font-bold">
+                            3
+                        </div>
+                        <div class="flex-grow">
+                            <div class="flex items-center justify-between">
+                                <span id="title-step-3" class="font-bold text-gray-400">BERHASIL! Top Up Masuk Akun</span>
+                                <span id="time-step-3" class="text-[10px] text-gray-500">-</span>
+                            </div>
+                            <p class="text-[11px] text-gray-400">Item game berhasil ditambahkan ke akun Anda.</p>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+            <!-- Action Buttons -->
+            <div id="modal-action-buttons" class="flex gap-3">
+                <button onclick="closeModal()" class="w-1/2 py-3 rounded-xl border border-gray-700 text-gray-300 hover:bg-gray-800 font-bold text-xs">
+                    Batal
+                </button>
+                <button id="btn-confirm-payment" onclick="triggerAutoProcess()" class="w-1/2 py-3 rounded-xl bg-gradient-to-r from-cyan-400 to-emerald-400 text-black font-extrabold text-xs flex items-center justify-center gap-1.5 shadow-lg">
+                    <i class="fa-solid fa-rotate mr-1"></i> Saya Sudah Bayar
+                </button>
+            </div>
+
+            <div id="modal-success-done-btn" class="hidden">
+                <button onclick="closeModal()" class="w-full py-3 bg-emerald-500 hover:bg-emerald-400 text-black font-extrabold text-xs rounded-xl shadow-lg transition">
+                    Selesai & Kembali Ke Beranda
+                </button>
+            </div>
+
+        </div>
+    </div>
+
+    <!-- ================= MODAL PETUNJUK CARA MENCARI ID GAME ================= -->
+    <div id="guide-modal" class="fixed inset-0 z-50 bg-black/80 backdrop-blur-sm hidden items-center justify-center p-4">
+        <div class="bg-brand-cardBg border border-gray-800 rounded-3xl max-w-md w-full p-6 relative">
+            <button onclick="closeModalGuide()" class="absolute top-4 right-4 text-gray-400 hover:text-white text-xl">
+                <i class="fa-solid fa-xmark"></i>
+            </button>
+            <h3 class="text-lg font-black text-white mb-3 flex items-center gap-2">
+                <i class="fa-solid fa-circle-info text-cyan-400"></i> Cara Menemukan User ID Game
+            </h3>
+            <div class="space-y-3 text-xs text-gray-300 leading-relaxed">
+                <p><strong>Mobile Legends:</strong> Buka profil akun MLBB Anda. ID & Zone tertera di samping avatar, contoh: <code class="text-cyan-400">12345678 (1234)</code>.</p>
+                <p><strong>Free Fire:</strong> Klik profil karakter di kiri atas. Nomor UID 9-10 digit berada di bawah foto profil.</p>
+                <p><strong>Genshin Impact:</strong> Nomor UID 9 digit berada di sudut kanan bawah layar saat game terbuka.</p>
+                <p><strong>PUBG Mobile:</strong> Buka menu Profil. ID berupa deretan 10 angka di dekat avatar Anda.</p>
+                <p><strong>Honor of Kings:</strong> Klik Avatar Profil di kiri atas, masuk ke pengaturan profil untuk menyalin User ID.</p>
+            </div>
+            <button onclick="closeModalGuide()" class="w-full mt-5 py-2.5 bg-cyan-500 hover:bg-cyan-400 text-black font-bold text-xs rounded-xl">Mengerti</button>
+        </div>
+    </div>
+
+    <!-- ================= JAVASCRIPT LOGIC ================= -->
+    <script>
+        // DATA GAME & PRODUK (TERMASUK MEMBERSHIP RP 60.000)
+        const gamesData = {
+            mlbb: {
+                name: "Mobile Legends",
+                category: "Mobile Legends",
+                image: "https://images.unsplash.com/photo-1538481199705-c710c4e965fc?w=300&auto=format&fit=crop&q=80",
+                hasZoneId: true,
+                items: [
+                    { name: "Membership Bulanan MLBB", price: 60000, tag: "Special Rp 60k" },
+                    { name: "Weekly Diamond Pass", price: 27500, tag: "Best Pass" },
+                    { name: "50 Diamond", price: 14000 },
+                    { name: "100 Diamond", price: 28000 },
+                    { name: "250 Diamond", price: 72000, tag: "Populer" },
+                    { name: "500 Diamond", price: 142000 },
+                    { name: "1000 Diamond", price: 285000 }
+                ]
+            },
+            ff: {
+                name: "Free Fire",
+                category: "Free Fire",
+                image: "https://images.unsplash.com/photo-1511512578047-dfb367046420?w=300&auto=format&fit=crop&q=80",
+                hasZoneId: false,
+                items: [
+                    { name: "Membership Bulanan FF", price: 60000, tag: "Special Rp 60k" },
+                    { name: "Membership Mingguan FF", price: 29000 },
+                    { name: "140 Diamond", price: 20000 },
+                    { name: "355 Diamond", price: 48000, tag: "Terlaris" },
+                    { name: "720 Diamond", price: 95000 }
+                ]
+            },
+            genshin: {
+                name: "Genshin Impact",
+                category: "Genshin Impact",
+                image: "https://images.unsplash.com/photo-1563089145-599997674d42?w=300&auto=format&fit=crop&q=80",
+                hasZoneId: true,
+                items: [
+                    { name: "Blessing of the Welkin Moon", price: 60000, tag: "Welkin Rp 60k" },
+                    { name: "60 Genesis Crystals", price: 15000 },
+                    { name: "300+30 Genesis Crystals", price: 75000 },
+                    { name: "980+110 Genesis Crystals", price: 230000 }
+                ]
+            },
+            pubg: {
+                name: "PUBG Mobile",
+                category: "PUBG Mobile",
+                image: "https://images.unsplash.com/photo-1542751371-adc38448a05e?w=300&auto=format&fit=crop&q=80",
+                hasZoneId: false,
+                items: [
+                    { name: "Membership Bulanan PUBG", price: 60000, tag: "Special Rp 60k" },
+                    { name: "60 UC", price: 15000 },
+                    { name: "325 UC", price: 73000, tag: "Populer" },
+                    { name: "660 UC", price: 145000 }
+                ]
+            },
+            hok: {
+                name: "Honor of Kings",
+                category: "Honor of Kings",
+                image: "https://images.unsplash.com/photo-1550745165-9bc0b252726f?w=300&auto=format&fit=crop&q=80",
+                hasZoneId: false,
+                items: [
+                    { name: "Monthly Card Pass HOK", price: 60000, tag: "Special Rp 60k" },
+                    { name: "80 Tokens", price: 15000 },
+                    { name: "240 Tokens", price: 45000 },
+                    { name: "400 Tokens", price: 75000 }
+                ]
+            }
+        };
+
+        // GLOBAL STATE
+        let currentFilter = 'all';
+        let selectedGameKey = null;
+        let selectedItem = null;
+        let selectedPayment = null;
+        let adminFee = 0;
+        let paymentPayCode = "";
+        let timerInterval = null;
+        let autoProcessTimeout = null;
+
+        window.addEventListener('DOMContentLoaded', () => {
+            renderGameGrid();
+            document.getElementById('mobile-menu-btn').addEventListener('click', () => {
+                document.getElementById('mobile-menu').classList.toggle('hidden');
+            });
+        });
+
+        // RENDER GAME LIST
+        function renderGameGrid() {
+            const grid = document.getElementById('game-grid');
+            const searchKeyword = document.getElementById('search-game-input').value.toLowerCase();
+            grid.innerHTML = '';
+
+            Object.keys(gamesData).forEach(key => {
+                const game = gamesData[key];
+
+                const matchesCategory = currentFilter === 'all' || game.category === currentFilter;
+                const matchesSearch = game.name.toLowerCase().includes(searchKeyword);
+
+                if (matchesCategory && matchesSearch) {
+                    const card = document.createElement('div');
+                    card.className = `bg-brand-cardBg border border-gray-800 hover:border-cyan-400/80 rounded-2xl p-3 cursor-pointer transition transform hover:-translate-y-1 flex flex-col items-center text-center group`;
+                    card.onclick = () => selectGame(key);
+
+                    card.innerHTML = `
+                        <div class="relative w-full aspect-square rounded-xl overflow-hidden mb-2">
+                            <img src="${game.image}" class="w-full h-full object-cover group-hover:scale-110 transition duration-300" alt="${game.name}">
+                            <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition"></div>
+                        </div>
+                        <span class="text-xs font-bold text-gray-200 group-hover:text-cyan-400 line-clamp-1">${game.name}</span>
+                        <span class="text-[10px] text-gray-400 mt-0.5">Hanya ID • Instant</span>
+                    `;
+                    grid.appendChild(card);
+                }
+            });
+        }
+
+        // FILTER CATEGORY
+        function setCategoryFilter(category, buttonEl) {
+            currentFilter = category;
+            
+            document.querySelectorAll('.category-btn').forEach(btn => {
+                btn.className = 'category-btn border px-4 py-2 rounded-xl font-bold transition whitespace-nowrap bg-gray-900 border-gray-700 text-gray-300 hover:border-cyan-400';
+            });
+
+            buttonEl.className = 'category-btn active border px-4 py-2 rounded-xl font-bold transition whitespace-nowrap bg-cyan-500 border-cyan-400 text-black';
+            renderGameGrid();
+        }
+
+        // SEARCH GAME
+        function filterGames() {
+            renderGameGrid();
+        }
+
+        // SELECT GAME
+        function selectGame(gameKey) {
+            selectedGameKey = gameKey;
+            const game = gamesData[gameKey];
+
+            document.getElementById('form-overlay-alert').classList.add('hidden');
+
+            const imgEl = document.getElementById('selected-game-img');
+            imgEl.src = game.image;
+            imgEl.classList.remove('hidden');
+            document.getElementById('selected-game-title').innerText = game.name;
+
+            const zoneContainer = document.getElementById('zone-id-container');
+            if(game.hasZoneId) {
+                zoneContainer.style.display = 'block';
+                document.getElementById('zone-id').required = true;
+            } else {
+                zoneContainer.style.display = 'none';
+                document.getElementById('zone-id').required = false;
+            }
+
+            renderNominals(game.items);
+            document.getElementById('topup-form-section').scrollIntoView({ behavior: 'smooth' });
+            
+            selectedItem = null;
+            updateTotalPrice();
+        }
+
+        // DIRECT MEMBERSHIP SELECTION
+        function selectGameDirect(gameKey, itemName, price) {
+            selectGame(gameKey);
+            setTimeout(() => {
+                selectNominal(itemName, price);
+            }, 100);
+        }
+
+        // RENDER NOMINAL OPTIONS
+        function renderNominals(items) {
+            const container = document.getElementById('nominal-grid');
+            container.innerHTML = '';
+
+            items.forEach(item => {
+                const el = document.createElement('div');
+                el.className = `nominal-card bg-gray-900/60 border border-gray-700 hover:border-cyan-400 p-3 rounded-xl cursor-pointer transition relative flex flex-col justify-between`;
+                el.onclick = () => selectNominal(item.name, item.price, el);
+
+                const tagHTML = item.tag ? `<span class="absolute -top-2 right-2 bg-gradient-to-r from-amber-400 to-amber-500 text-black font-black text-[9px] px-2 py-0.5 rounded-full">${item.tag}</span>` : '';
+
+                el.innerHTML = `
+                    ${tagHTML}
+                    <span class="text-xs font-bold text-gray-200 mt-1">${item.name}</span>
+                    <span class="text-xs font-extrabold text-cyan-400 mt-2">Rp ${item.price.toLocaleString('id-ID')}</span>
+                `;
+                container.appendChild(el);
+            });
+        }
+
+        // SELECT NOMINAL
+        function selectNominal(name, price, element = null) {
+            selectedItem = { name, price };
+
+            document.querySelectorAll('.nominal-card').forEach(card => {
+                card.classList.remove('border-cyan-400', 'bg-cyan-500/10');
+                card.classList.add('border-gray-700');
+            });
+
+            if(element) {
+                element.classList.remove('border-gray-700');
+                element.classList.add('border-cyan-400', 'bg-cyan-500/10');
+            }
+
+            updateTotalPrice();
+        }
+
+        // SELECT PAYMENT
+        function selectPayment(methodName, codeVal, fee) {
+            selectedPayment = methodName;
+            paymentPayCode = codeVal;
+            adminFee = fee;
+
+            document.querySelectorAll('.payment-card').forEach(card => {
+                card.classList.remove('border-cyan-400', 'bg-cyan-500/10');
+                card.classList.add('border-gray-700');
+            });
+
+            event.currentTarget.classList.remove('border-gray-700');
+            event.currentTarget.classList.add('border-cyan-400', 'bg-cyan-500/10');
+
+            updateTotalPrice();
+        }
+
+        // UPDATE PRICE CALCULATOR
+        function updateTotalPrice() {
+            const totalDisplay = document.getElementById('total-price-display');
+            if(!selectedItem) {
+                totalDisplay.innerText = 'Rp 0';
+                return;
+            }
+
+            const total = selectedItem.price + adminFee;
+            totalDisplay.innerText = `Rp ${total.toLocaleString('id-ID')}`;
+        }
+
+        // FORM SUBMIT -> TRIGGER CHECKOUT MODAL & AUTO LIVE STATUS TRACKER
+        function handleFormSubmit(e) {
+            e.preventDefault();
+
+            if(!selectedGameKey) {
+                alert('Silakan pilih game terlebih dahulu!');
+                return;
+            }
+            if(!selectedItem) {
+                alert('Silakan pilih paket nominal / membership!');
+                return;
+            }
+            if(!selectedPayment) {
+                alert('Silakan pilih metode pembayaran!');
+                return;
+            }
+
+            const userId = document.getElementById('user-id').value;
+            const zoneId = document.getElementById('zone-id').value;
+            const game = gamesData[selectedGameKey];
+
+            const combinedId = game.hasZoneId && zoneId ? `${userId} (${zoneId})` : userId;
+            const grandTotal = selectedItem.price + adminFee;
+            const generatedInvoice = 'NAS23-' + Math.floor(10000 + Math.random() * 90000);
+
+            // Populate Modal Data
+            document.getElementById('modal-inv-code').innerText = generatedInvoice;
+            document.getElementById('modal-game-item').innerText = `${game.name} - ${selectedItem.name}`;
+            document.getElementById('modal-id-val').innerText = combinedId;
+            document.getElementById('modal-pay-method').innerText = selectedPayment;
+            document.getElementById('modal-grand-total').innerText = `Rp ${grandTotal.toLocaleString('id-ID')}`;
+
+            // Handle Display Area QRIS vs Code
+            const qrisArea = document.getElementById('qris-display-area');
+            const codeArea = document.getElementById('code-display-area');
+
+            if(selectedPayment.includes('QRIS')) {
+                qrisArea.classList.remove('hidden');
+                codeArea.classList.add('hidden');
+            } else {
+                qrisArea.classList.add('hidden');
+                codeArea.classList.remove('hidden');
+                document.getElementById('pay-code-number').innerText = paymentPayCode;
+                document.getElementById('pay-code-holder').innerText = `Atas Nama: Nas23 Shop Gateway (${selectedPayment})`;
+            }
+
+            // Reset Tracker to Initial Step 1
+            resetLiveTracker();
+
+            const modal = document.getElementById('checkout-modal');
+            modal.classList.remove('hidden');
+            modal.classList.add('flex');
+
+            startModalTimer();
+        }
+
+        // RESET TRACKER TO STEP 1
+        function resetLiveTracker() {
+            // Step 1 Active
+            document.getElementById('track-step-1').className = "flex items-start gap-3 opacity-100";
+            document.getElementById('icon-step-1').className = "w-7 h-7 rounded-full bg-amber-500/20 text-amber-400 border border-amber-500/40 flex items-center justify-center shrink-0 font-bold pulse-active";
+            document.getElementById('icon-step-1').innerHTML = "1";
+            document.getElementById('title-step-1').className = "font-bold text-amber-400";
+            document.getElementById('title-step-1').innerText = "Menunggu Pembayaran...";
+
+            // Step 2 Inactive
+            document.getElementById('track-step-2').className = "flex items-start gap-3 opacity-40";
+            document.getElementById('icon-step-2').className = "w-7 h-7 rounded-full bg-gray-800 text-gray-500 border border-gray-700 flex items-center justify-center shrink-0 font-bold";
+            document.getElementById('icon-step-2').innerHTML = "2";
+            document.getElementById('title-step-2').className = "font-bold text-gray-400";
+            document.getElementById('time-step-2').innerText = "-";
+
+            // Step 3 Inactive
+            document.getElementById('track-step-3').className = "flex items-start gap-3 opacity-40";
+            document.getElementById('icon-step-3').className = "w-7 h-7 rounded-full bg-gray-800 text-gray-500 border border-gray-700 flex items-center justify-center shrink-0 font-bold";
+            document.getElementById('icon-step-3').innerHTML = "3";
+            document.getElementById('title-step-3').className = "font-bold text-gray-400";
+            document.getElementById('time-step-3').innerText = "-";
+
+            document.getElementById('modal-action-buttons').classList.remove('hidden');
+            document.getElementById('modal-success-done-btn').classList.add('hidden');
+            document.getElementById('payment-credentials-box').classList.remove('hidden');
+        }
+
+        // AUTOMATIC TIMED STEP TRANSITIONS (STEP 1 -> STEP 2 -> STEP 3)
+        function triggerAutoProcess() {
+            const btn = document.getElementById('btn-confirm-payment');
+            btn.innerHTML = `<i class="fa-solid fa-spinner animate-spin"></i> Memverifikasi...`;
+            btn.disabled = true;
+
+            const nowStr = new Date().toLocaleTimeString('id-ID', { hour: '2-digit', minute: '2-digit' });
+
+            // Transition to Step 2: Pembayaran Diterima, Memproses ID Game
+            setTimeout(() => {
+                // Step 1 Complete
+                document.getElementById('icon-step-1').className = "w-7 h-7 rounded-full bg-emerald-500/20 text-emerald-400 border border-emerald-500/40 flex items-center justify-center shrink-0 font-bold";
+                document.getElementById('icon-step-1').innerHTML = `<i class="fa-solid fa-check text-xs"></i>`;
+                document.getElementById('title-step-1').innerText = "Pembayaran Diterima";
+                document.getElementById('title-step-1').className = "font-bold text-emerald-400";
+
+                // Step 2 Active
+                document.getElementById('track-step-2').className = "flex items-start gap-3 opacity-100";
+                document.getElementById('icon-step-2').className = "w-7 h-7 rounded-full bg-cyan-500/20 text-cyan-400 border border-cyan-500/40 flex items-center justify-center shrink-0 font-bold pulse-active";
+                document.getElementById('icon-step-2').innerHTML = `<i class="fa-solid fa-arrows-rotate animate-spin text-xs"></i>`;
+                document.getElementById('title-step-2').className = "font-bold text-cyan-400";
+                document.getElementById('time-step-2').innerText = nowStr;
+
+                // Hide credentials box during processing
+                document.getElementById('payment-credentials-box').classList.add('hidden');
+
+                // Transition to Step 3: BERHASIL! (2.5 Detik berikutnya)
+                setTimeout(() => {
+                    const doneStr = new Date().toLocaleTimeString('id-ID', { hour: '2-digit', minute: '2-digit' });
+
+                    // Step 2 Complete
+                    document.getElementById('icon-step-2').className = "w-7 h-7 rounded-full bg-emerald-500/20 text-emerald-400 border border-emerald-500/40 flex items-center justify-center shrink-0 font-bold";
+                    document.getElementById('icon-step-2').innerHTML = `<i class="fa-solid fa-check text-xs"></i>`;
+                    document.getElementById('title-step-2').innerText = "Verifikasi ID Berhasil";
+                    document.getElementById('title-step-2').className = "font-bold text-emerald-400";
+
+                    // Step 3 Complete
+                    document.getElementById('track-step-3').className = "flex items-start gap-3 opacity-100";
+                    document.getElementById('icon-step-3').className = "w-7 h-7 rounded-full bg-emerald-500 text-black flex items-center justify-center shrink-0 font-bold";
+                    document.getElementById('icon-step-3').innerHTML = `<i class="fa-solid fa-check text-xs"></i>`;
+                    document.getElementById('title-step-3').className = "font-extrabold text-emerald-400 text-sm";
+                    document.getElementById('time-step-3').innerText = doneStr;
+
+                    // Switch Buttons
+                    document.getElementById('modal-action-buttons').classList.add('hidden');
+                    document.getElementById('modal-success-done-btn').classList.remove('hidden');
+
+                    if(timerInterval) clearInterval(timerInterval);
+                    document.getElementById('payment-timer').innerText = "SUKSES";
+                    document.getElementById('payment-timer').className = "text-xs font-mono bg-emerald-500/20 text-emerald-400 border border-emerald-500/30 px-2.5 py-1 rounded-lg";
+
+                }, 2500);
+
+            }, 1200);
+        }
+
+        function closeModal() {
+            const modal = document.getElementById('checkout-modal');
+            modal.classList.add('hidden');
+            modal.classList.remove('flex');
+            if(timerInterval) clearInterval(timerInterval);
+            
+            // Reset Submit Button
+            const btn = document.getElementById('btn-confirm-payment');
+            btn.innerHTML = `<i class="fa-solid fa-rotate mr-1"></i> Saya Sudah Bayar`;
+            btn.disabled = false;
+        }
+
+        function copyPayCode() {
+            const textToCopy = document.getElementById('pay-code-number').innerText;
+            
+            const tempInput = document.createElement("input");
+            tempInput.value = textToCopy;
+            document.body.appendChild(tempInput);
+            tempInput.select();
+            document.execCommand("copy");
+            document.body.removeChild(tempInput);
+
+            alert("Kode Pembayaran " + textToCopy + " berhasil disalin!");
+        }
+
+        function startModalTimer() {
+            let duration = 15 * 60; // 15 minutes
+            const timerDisplay = document.getElementById('payment-timer');
+
+            if(timerInterval) clearInterval(timerInterval);
+
+            timerInterval = setInterval(() => {
+                let minutes = parseInt(duration / 60, 10);
+                let seconds = parseInt(duration % 60, 10);
+
+                minutes = minutes < 10 ? "0" + minutes : minutes;
+                seconds = seconds < 10 ? "0" + seconds : seconds;
+
+                timerDisplay.innerText = minutes + ":" + seconds;
+
+                if (--duration < 0) {
+                    clearInterval(timerInterval);
+                    timerDisplay.innerText = "EXPIRED";
+                }
+            }, 1000);
+        }
+
+        function openModalGuide() {
+            const modal = document.getElementById('guide-modal');
+            modal.classList.remove('hidden');
+            modal.classList.add('flex');
+        }
+
+        function closeModalGuide() {
+            const modal = document.getElementById('guide-modal');
+            modal.classList.add('hidden');
+            modal.classList.remove('flex');
+        }
+    </script>
+</body>
+</html>
